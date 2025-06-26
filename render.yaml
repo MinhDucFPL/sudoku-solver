@@ -1,9 +1,8 @@
 services:
   - type: web
     name: sudoku-solver
-    runtime: python
-    buildCommand: ""
-    startCommand: python app.py
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.10
+    env: docker
+    plan: free
+    repo: https://github.com/MinhDucFPL/sudoku-solver
+    branch: master
+    autoDeploy: true
