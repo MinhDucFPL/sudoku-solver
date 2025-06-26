@@ -1,8 +1,7 @@
 services:
   - type: web
     name: sudoku-solver
-    env: docker
-    plan: free
+    env: docker  # <-- DÒNG NÀY QUAN TRỌNG
     repo: https://github.com/MinhDucFPL/sudoku-solver
     branch: master
     autoDeploy: true
