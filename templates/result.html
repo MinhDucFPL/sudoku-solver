@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Kết quả Sudoku</title></head>
+<body>
+    <h2>Kết quả giải Sudoku</h2>
+    <table border="1" cellpadding="6">
+        {% for i in range(9) %}
+        <tr>
+            {% for j in range(9) %}
+            <td {% if original[i][j] == 0 %} style="color:red" {% endif %}>
+                {{ solved[i][j] }}
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <br><a href="/">🔁 Giải Sudoku khác</a>
+</body>
+</html>

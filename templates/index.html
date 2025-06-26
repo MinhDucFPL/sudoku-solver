@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sudoku Solver</title>
+    <style>
+        table input { width: 30px; text-align: center; }
+    </style>
+</head>
+<body>
+    <h2>Tải ảnh Sudoku lên</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="sudoku_image">
+        <button type="submit">Tải lên & Nhận dạng</button>
+    </form>
+
+    {% if grid %}
+    <hr>
+    <form action="{{ url_for('solve_sudoku') }}" method="post">
+        <h3>Kiểm tra & chỉnh sửa bảng Sudoku:</h3>
+        <table>
+            {% for i in range(9) %}
+            <tr>
+                {% for j in range(9) %}
+                <td>
+                    <input type="text" name="cell-{{i}}-{{j}}" maxlength="1"
+                           value="{{grid[i][j] if grid[i][j] != 0 else ''}}">
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <button type="submit">✅ Xác nhận & Giải</button>
+    </form>
+    {% endif %}
+</body>
+</html>
