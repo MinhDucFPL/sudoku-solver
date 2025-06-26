@@ -1,6 +1,6 @@
 FROM python:3.10-slim
 
-# Cài các thư viện hệ thống cần thiết
+# Cài các thư viện hệ thống cần cho OpenCV và Tesseract
 RUN apt-get update && apt-get install -y \
     tesseract-ocr \
     libglib2.0-0 \
